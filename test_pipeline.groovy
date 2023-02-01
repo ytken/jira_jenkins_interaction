@@ -3,7 +3,7 @@ pipeline {
         stage('env-var') {
             steps {
                 script {
-                    env.pathToDir = ""
+                    env.pathToDir = "/home/aovchinnikova/apps/git/jira_jenkins_interaction"
                     env.scriptToSurroundShellCommands  = """#!/bin/bash
                                         shopt -s expand_aliases
                                         source /etc/profile
@@ -16,7 +16,6 @@ pipeline {
         stage('work') {
             steps {
                 script {
-                    env.pathToDir = sh(returnStdout: true, script: "pwd").trim()
                     sh "python ${env.pathToDir}/run.py \"Test Jira_python\" \"Description Test Jira_python\""
                 }
             }
