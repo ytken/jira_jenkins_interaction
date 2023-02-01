@@ -18,7 +18,7 @@ def create_custom_issue(jira_auth, summary, description, assignee_name,
         "priority"    : {"name": priority}, # Highest High Medium Low Lowest Blocker
         "labels"      : labels,
         "assignee"    : {"name": assignee_name},
-        "Epic Link"   : {"Epic Name": epic_link}
+        "Epic Link"   : epic_link
     }
 
     jira_auth.create_issue(issue_fields)
