@@ -28,4 +28,4 @@ def create_custom_issue(jira_auth, summary, description, assignee_name,
 jira_options = {'server': 'https://j-ymp.yadro.com'}
 jira = JIRA(options=jira_options, basic_auth=("a.ovchinnikova", "IreN951a"))
 
-create_custom_issue(jira, sys.argv[1:])
+create_custom_issue(jira, *sys.argv[1:])
