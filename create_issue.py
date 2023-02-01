@@ -7,7 +7,7 @@ def create_custom_issue(jira_auth, summary, description, assignee_name,
                 reporter_name="a.ovchinnikova",
                 priority="Medium",
                 labels=[],
-                epic_link=None
+                epic_link="Regress"
                 ):
     issue_fields = {
         "project"     : {"key": proj_key},
