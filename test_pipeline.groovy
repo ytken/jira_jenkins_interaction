@@ -16,7 +16,7 @@ pipeline {
         stage('work') {
             steps {
                 script {
-                    sh "python3 run.py \"Test Jira_python\" \"Description Test Jira_python\""
+                    sh "python3 create_issue.py \"Test Jira_python\" \"Description Test Jira_python\" \"a.ovchinnikova\""
                 }
             }
         }

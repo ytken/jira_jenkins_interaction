@@ -1,14 +1,5 @@
+import sys
 from jira import JIRA
-
-jira_options = {'server': 'https://j-ymp.yadro.com'}
-jira = JIRA(options=jira_options, basic_auth=("a.ovchinnikova", "IreN951a"))
-
-summary = "Test Jira_python"
-description = """Description Test Jira_python"""
-
-# {code:java}
-# // Some comments here
-# {code}
 
 def create_custom_issue(jira_auth, summary, description, assignee_name,
                 proj_key="DEVOPS", 
@@ -30,4 +21,11 @@ def create_custom_issue(jira_auth, summary, description, assignee_name,
         "Epic Link"   : {"Epic Name": epic_link}
     }
 
-    jira_auth.create_issue(issue_fields)
+    for key in issue_fields:
+        print(key, " ", issue_fields[key])
+    #jira_auth.create_issue(issue_fields)
+
+jira_options = {'server': 'https://j-ymp.yadro.com'}
+jira = JIRA(options=jira_options, basic_auth=("a.ovchinnikova", "IreN951a"))
+
+create_custom_issue(jira, sys.argv[1:])
