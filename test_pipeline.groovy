@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'python:3.10.7-alpine' } }
+    agent any
     stages {
         stage('env-var') {
             steps {
@@ -17,7 +17,7 @@ pipeline {
         stage('work') {
             steps {
                 script {
-                    sh "python ${env.pathToDir}/run.py \"Test Jira_python\" \"Description Test Jira_python\""
+                    sh "python3 ${env.pathToDir}/run.py \"Test Jira_python\" \"Description Test Jira_python\""
                 }
             }
         }
