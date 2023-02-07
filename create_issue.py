@@ -21,7 +21,7 @@ def create_custom_issue(jira_auth, summary, description, assignee_name,
         "customfield_10108"   : "DEVOPS-3"
     }
 
-    jira_auth.create_issue(issue_fields)
+    #jira_auth.create_issue(issue_fields)
 
 jira_options = {'server': 'https://j-ymp.yadro.com'}
 jira = JIRA(options=jira_options, basic_auth=("a.ovchinnikova", "IreN951a"))
